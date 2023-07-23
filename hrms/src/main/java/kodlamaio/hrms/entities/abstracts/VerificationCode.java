@@ -1,5 +1,6 @@
 package kodlamaio.hrms.entities.abstracts;
 
+import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,27 +15,26 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "users")
+@Table(name = "verification_codes")
 @Inheritance(strategy = InheritanceType.JOINED)
-@Entity
-public class BaseUser {
+public class VerificationCode {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "email", nullable = false, unique=true)
-	private String email;
-	 
-	@Column(name = "password" , nullable = false)
-	private String password;
+	@Column(name = "code")
+	private String code;
 	
+	@Column(name = "is_verified")
+	private boolean isVerified;
 	
-//	@OneToOne(mappedBy = "baseUser", cascade = CascadeType.ALL)
-//	public Candidate candidate; 
-} 
+	@Column(name = "confirme_date")
+	private LocalDate confirmeDate;
+}
