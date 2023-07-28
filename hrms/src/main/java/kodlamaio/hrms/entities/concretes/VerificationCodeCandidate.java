@@ -32,7 +32,6 @@ public class VerificationCodeCandidate{
 	@JoinColumn(name = "candidate_id")
 	private Candidate candidate;
 	
-	@OneToOne
-	@JoinColumn(name = "verification_code_id")
+	@OneToOne(mappedBy = "verificationCodeCandidate")
 	private VerificationCode verificationCode;
 }

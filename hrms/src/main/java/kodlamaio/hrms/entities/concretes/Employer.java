@@ -15,7 +15,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "employers")
-//@PrimaryKeyJoinColumn(name = "user_id")
 public class Employer  {
 	
 	@Id

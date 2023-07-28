@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import kodlamaio.hrms.entities.concretes.Candidate;
@@ -32,7 +33,8 @@ public class BaseUser {
 	@Column(name = "password" , nullable = false)
 	private String password;
 	
-	@OneToOne(mappedBy = "baseUser")
+	@OneToOne
+	@JoinColumn(name = "id")
 	private Candidate candidate;
 	 
 }  

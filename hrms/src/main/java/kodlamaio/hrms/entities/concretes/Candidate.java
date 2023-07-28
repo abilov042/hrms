@@ -1,11 +1,11 @@
 package kodlamaio.hrms.entities.concretes;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import kodlamaio.hrms.entities.abstracts.BaseUser;
@@ -27,16 +27,15 @@ public class Candidate {
 	@Column(name = "candidate_id")
 	private int candidateId;
 	
-	@Column(name = "identity_nuber", nullable = false, unique=true)
-	private String identityNuber;
+	@Column(name = "identity_number", nullable = false, unique=true)
+	private String identityNumber;
 	
 	@Column(name = "birth_of_year" , nullable = false)
-	private String birthOfYear; 
+	private String birthOfYear;
 	
-	@OneToOne(mappedBy = "candidate")
+	@OneToOne(mappedBy = "candidate", cascade = CascadeType.ALL)
 	private VerificationCodeCandidate verificationCodeCandidate;
 	
-	@OneToOne()
-	@JoinColumn(name = "user_id")
+	@OneToOne(mappedBy = "candidate")
 	private BaseUser baseUser;
 }

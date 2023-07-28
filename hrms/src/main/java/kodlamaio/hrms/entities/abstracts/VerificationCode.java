@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -38,6 +39,7 @@ public class VerificationCode {
 	@Column(name = "confirme_date")
 	private Date confirmeDate;
 	
-	@OneToOne(mappedBy = "verificationCode")
-	private VerificationCodeCandidate codeCandidate;
+	@OneToOne
+	@JoinColumn(name = "id")
+	private VerificationCodeCandidate verificationCodeCandidate;
 }
