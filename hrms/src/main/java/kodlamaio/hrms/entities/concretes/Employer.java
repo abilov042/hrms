@@ -2,9 +2,8 @@ package kodlamaio.hrms.entities.concretes;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.Id;
 import javax.persistence.Table;
-import kodlamaio.hrms.entities.abstracts.BaseUser;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,8 +16,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Table(name = "employers")
 //@PrimaryKeyJoinColumn(name = "user_id")
-public class Employer  extends BaseUser {
+public class Employer  {
 	
+	@Id
 	@Column(name = "employer_id")
 	private int employerId;
 	
@@ -31,6 +31,6 @@ public class Employer  extends BaseUser {
 	@Column(name = "phone_number")
 	private String phoneNumber;
 	
-	@OneToOne(mappedBy = "employer")
-	private VerificationCodeEmployer codeVerificationCodeEmployer;
+//	@OneToOne(mappedBy = "employer")
+//	private VerificationCodeEmployer codeVerificationCodeEmployer;
 }

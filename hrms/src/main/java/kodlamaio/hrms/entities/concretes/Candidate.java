@@ -2,6 +2,10 @@ package kodlamaio.hrms.entities.concretes;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import kodlamaio.hrms.entities.abstracts.BaseUser;
@@ -16,10 +20,12 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "candidates")
-public class Candidate extends BaseUser {
+public class Candidate {
 	
-//	@Column(name = "user_id")
-//	private int userId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "candidate_id")
+	private int candidateId;
 	
 	@Column(name = "identity_nuber", nullable = false, unique=true)
 	private String identityNuber;
@@ -27,12 +33,10 @@ public class Candidate extends BaseUser {
 	@Column(name = "birth_of_year" , nullable = false)
 	private String birthOfYear; 
 	
-	
 	@OneToOne(mappedBy = "candidate")
 	private VerificationCodeCandidate verificationCodeCandidate;
-	 
 	
-//	@OneToOne(fetch = FetchType.LAZY)
-//	@JoinColumn(name="candidate_id", referencedColumnName = "id")
-//	private BaseUser baseUser;
+	@OneToOne()
+	@JoinColumn(name = "user_id")
+	private BaseUser baseUser;
 }

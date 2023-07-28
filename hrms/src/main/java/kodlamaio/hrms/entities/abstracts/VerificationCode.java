@@ -1,27 +1,27 @@
 package kodlamaio.hrms.entities.abstracts;
 
-import java.time.LocalDate;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import kodlamaio.hrms.entities.concretes.VerificationCodeCandidate;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Getter
+@Getter 
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "verification_codes")
-@Inheritance(strategy = InheritanceType.JOINED)
 public class VerificationCode {
 	
 	@Id
@@ -36,5 +36,8 @@ public class VerificationCode {
 	private boolean isVerified;
 	
 	@Column(name = "confirme_date")
-	private LocalDate confirmeDate;
+	private Date confirmeDate;
+	
+	@OneToOne(mappedBy = "verificationCode")
+	private VerificationCodeCandidate codeCandidate;
 }

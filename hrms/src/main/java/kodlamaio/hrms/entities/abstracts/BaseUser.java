@@ -5,10 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
+import kodlamaio.hrms.entities.concretes.Candidate;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,7 +18,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "users")
-@Inheritance(strategy = InheritanceType.JOINED)
 @Entity
 public class BaseUser {
 	
@@ -34,7 +32,7 @@ public class BaseUser {
 	@Column(name = "password" , nullable = false)
 	private String password;
 	
-	
-//	@OneToOne(mappedBy = "baseUser", cascade = CascadeType.ALL)
-//	public Candidate candidate; 
-} 
+	@OneToOne(mappedBy = "baseUser")
+	private Candidate candidate;
+	 
+}  
