@@ -7,11 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import kodlamaio.hrms.entities.concretes.VerificationCodeCandidate;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,7 +23,7 @@ public class VerificationCode {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "id", nullable = false)
 	private int id;
 	
 	@Column(name = "code")
@@ -39,7 +35,5 @@ public class VerificationCode {
 	@Column(name = "confirme_date")
 	private Date confirmeDate;
 	
-	@OneToOne
-	@JoinColumn(name = "id")
-	private VerificationCodeCandidate verificationCodeCandidate;
+	
 }

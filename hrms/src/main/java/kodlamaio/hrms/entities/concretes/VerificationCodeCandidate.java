@@ -25,13 +25,14 @@ public class VerificationCodeCandidate{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "verification_code_candidate_id")
-	private int verificationCodeCandidateId;
+	@Column(name = "id", nullable = false)
+	private int id;
 	
 	@OneToOne
-	@JoinColumn(name = "candidate_id")
-	private Candidate candidate;
-	
-	@OneToOne(mappedBy = "verificationCodeCandidate")
+	@JoinColumn(name = "verification_code_id")
 	private VerificationCode verificationCode;
-}
+	
+	@OneToOne
+	@JoinColumn(name = " candidate_id")
+	private Candidate candidate;
+} 

@@ -18,8 +18,8 @@ import lombok.Setter;
 public class Employer  {
 	
 	@Id
-	@Column(name = "employer_id")
-	private int employerId;
+	@Column(name = "id")
+	private int id;
 	
 	@Column(name = "company_name")
 	private String companyName;
