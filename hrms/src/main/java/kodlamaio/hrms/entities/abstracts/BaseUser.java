@@ -27,7 +27,7 @@ public class BaseUser {
 	@Column(name = "email", nullable = false, unique=true)
 	private String email;
 	 
-	@Column(name = "password" , nullable = false)
+	@Column(name = "password", nullable = false)
 	private String password;
 	
 	

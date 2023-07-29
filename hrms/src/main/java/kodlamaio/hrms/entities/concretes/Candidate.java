@@ -2,8 +2,6 @@ package kodlamaio.hrms.entities.concretes;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -23,7 +21,6 @@ import lombok.Setter;
 public class Candidate {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false)
 	private int id;
 	
@@ -34,7 +31,7 @@ public class Candidate {
 	private String birthOfYear;
 	
 	@OneToOne
-	@JoinColumn(name = "user_id")
+	@JoinColumn(name = "id")
 	private BaseUser baseUser;
 	
 	@OneToOne(mappedBy = "candidate")
