@@ -2,8 +2,6 @@ package kodlamaio.hrms.entities.concretes;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import kodlamaio.hrms.entities.abstracts.BaseUser;
 import lombok.AllArgsConstructor;
@@ -33,6 +31,6 @@ public class Candidate extends BaseUser {
 //	@JoinColumn(name = "id")
 //	private BaseUser baseUser;
 	
-	@OneToOne(mappedBy = "candidate")
-	private VerificationCodeCandidate verificationCodeCandidate;
+//	@OneToOne(mappedBy = "candidate")
+//	private VerificationCodeCandidate verificationCodeCandidate;
 }
