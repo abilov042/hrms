@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,7 +21,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "verification_codes")
-public class VerificationCode {
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class VerificationCode {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
