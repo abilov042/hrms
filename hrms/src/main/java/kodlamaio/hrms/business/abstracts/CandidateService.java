@@ -9,4 +9,6 @@ import kodlamaio.hrms.entities.concretes.Candidate;
 public interface CandidateService {
 	public Result add(Candidate candidate);
 	public DataResult<List<Candidate>> getAll();
+	public DataResult<List<Candidate>> getByBirthOfYear(String birthOfYear);
+	public DataResult<Candidate> getByEmail(String email);
 }

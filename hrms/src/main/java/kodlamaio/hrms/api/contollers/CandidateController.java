@@ -36,4 +36,16 @@ public class CandidateController {
 		return this.candidateService.getAll();
 	}
 	
+	@GetMapping("/getByBirthOfYear")
+	public DataResult<List<Candidate>> getByBirthOfYear(String birthOfYear) {
+		
+		return this.candidateService.getByBirthOfYear(birthOfYear);
+	}
+	
+	@GetMapping("/getByEmail")
+	public DataResult<Candidate> getByEmail(String email) {
+		
+		return this.candidateService.getByEmail(email);
+	}
+	
 }

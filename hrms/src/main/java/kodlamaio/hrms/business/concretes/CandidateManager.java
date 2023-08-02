@@ -25,9 +25,9 @@ public class CandidateManager implements CandidateService {
 
 	@Override
 	public Result add(Candidate candidate) {
-	this.candidateDao.save(candidate);
-	return new SuccessResult("Urun eklendi");
 		
+		this.candidateDao.save(candidate);
+		return new SuccessResult("Urun eklendi");
 	}
 
 	@Override
@@ -35,5 +35,20 @@ public class CandidateManager implements CandidateService {
 		
 		return new SuccessDataResult<List<Candidate>>("Data listelendi" ,candidateDao.findAll());
 	}
+	
+	
+	@Override
+	public DataResult<List<Candidate>> getByBirthOfYear(String birthOfYear) {
+		
+		return new SuccessDataResult<List<Candidate>>("Data listelendi" ,candidateDao.getByBirthOfYear(birthOfYear));
+	}
+
+	@Override
+	public DataResult<Candidate> getByEmail(String email) {
+		
+		return new SuccessDataResult<Candidate>("Geldi",this.candidateDao.getByE(email));
+	}
+	
+	
 
 }
