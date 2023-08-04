@@ -25,18 +25,15 @@ public class Candidate extends BaseUser {
 	@Column(name = "first_name", nullable = false) 
 	private String firstName;
 	
-	@NotBlank
-	@NotNull
+	
 	@Column(name = "last_name", nullable = false)
 	private String lastName;
 	
-	@NotBlank
-	@NotNull
+	
 	@Column(name = "identity_number", nullable = false, unique=true)
 	private String identityNumber;
 	
-	@NotBlank
-	@NotNull
+	
 	@Column(name = "birth_of_year" , nullable = false)
 	private String birthOfYear;
 	

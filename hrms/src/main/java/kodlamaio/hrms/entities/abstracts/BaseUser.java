@@ -8,8 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,18 +25,15 @@ public abstract class BaseUser {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false)
-	@NotBlank
-	@NotNull
 	private int id;
+	
 	
 	@Column(name = "email", nullable = false, unique=true)
 	private String email;
 	 
+	
 	@Column(name = "password", nullable = false)
 	private String password;
-	
-	
-	
 	
 	 
 }  
