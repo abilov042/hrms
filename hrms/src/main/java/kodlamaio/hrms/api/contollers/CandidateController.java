@@ -47,4 +47,9 @@ public class CandidateController {
 		return this.candidateService.getByEmail(email);
 	}
 	
+	@GetMapping("/test")
+	public void test(@RequestBody Candidate candidate) {
+		
+	}
+	
 }

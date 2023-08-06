@@ -6,6 +6,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import kodlamaio.hrms.entities.abstracts.BaseUser;
+import kodlamaio.hrms.entities.concretes.verifications.EmployeeConfirmEmployer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

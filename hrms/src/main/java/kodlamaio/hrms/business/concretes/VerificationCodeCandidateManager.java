@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import kodlamaio.hrms.business.abstracts.VerificationCodeCandidateService;
 import kodlamaio.hrms.dataAccess.abstracts.VerificationCodeCandidateDao;
 import kodlamaio.hrms.entities.concretes.Candidate;
-import kodlamaio.hrms.entities.concretes.VerificationCodeCandidate;
+import kodlamaio.hrms.entities.concretes.verifications.VerificationCodeCandidate;
 
 @Service
 public class VerificationCodeCandidateManager implements VerificationCodeCandidateService {

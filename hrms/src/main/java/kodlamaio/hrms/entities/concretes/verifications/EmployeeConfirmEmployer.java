@@ -1,4 +1,4 @@
-package kodlamaio.hrms.entities.concretes;
+package kodlamaio.hrms.entities.concretes.verifications;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,6 +7,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import kodlamaio.hrms.entities.concretes.Employer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,15 +18,13 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "employee_confirm_Employer")
+@Table(name = "employee_confirm_Employers")
 public class EmployeeConfirmEmployer {
 	
 	@Id
 	@Column(name = "id")
 	private int id;
 	
-//	@Column(name = "employer_id")
-//	private int employerId;
 	
 	@OneToOne
 	@JoinColumn(name = "id")
