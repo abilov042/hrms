@@ -1,12 +1,14 @@
 package kodlamaio.hrms.business.concretes;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-
 import kodlamaio.hrms.business.abstracts.EmployerJobPostingService;
 import kodlamaio.hrms.core.untilitues.result.DataResult;
+import kodlamaio.hrms.core.untilitues.result.Result;
 import kodlamaio.hrms.core.untilitues.result.SuccessDataResult;
+import kodlamaio.hrms.core.untilitues.result.SuccessResult;
 import kodlamaio.hrms.dataAccess.abstracts.CityDao;
 import kodlamaio.hrms.dataAccess.abstracts.EmployerJobPostingDao;
 import kodlamaio.hrms.dataAccess.abstracts.JobPositionDao;
@@ -30,12 +32,14 @@ public class EmployerJobPostingManager  implements EmployerJobPostingService{
 	}
 
 	@Override
-	public DataResult<EmployerJobPosting> add(EmployerJobPosting employerJobPosting) {
+	public Result add(EmployerJobPosting employerJobPosting) {
 		City city = cityDao.findById(employerJobPosting.getCity().getId());
 		JobPosition jobPosition = jobPositionDao.findById(employerJobPosting.getJobPosition().getId());
 		employerJobPosting.setCity(city);
 		employerJobPosting.setJobPosition(jobPosition);
-		return new SuccessDataResult<EmployerJobPosting>("Is elani yaradildi", this.employerJobPostingDao.save(employerJobPosting));
+		employerJobPosting.setPostingDate(new Date());
+		this.employerJobPostingDao.save(employerJobPosting);
+		return new SuccessResult("Is elani yaradildi");
 	}
 
 	@Override
