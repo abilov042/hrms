@@ -1,7 +1,6 @@
 package kodlamaio.hrms.entities.concretes.jobPosting;
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,9 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
+import kodlamaio.hrms.entities.concretes.Company;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -49,14 +47,19 @@ public class EmployerJobPosting {
 	@Column(name = "status")
 	private boolean status;
 	
+	@Column(name = "deadline")
+	private Date deadline;
+	
 	@ManyToOne
 	@JoinColumn(name = "job_position_id")
-	
 	private JobPosition jobPosition;
 	
 	@ManyToOne
-	@JoinColumn(name = "city_id")
+	@JoinColumn(name = "company_id")
+	private Company company;
 	
+	@ManyToOne
+	@JoinColumn(name = "city_id")
 	private City city;
 	
 	

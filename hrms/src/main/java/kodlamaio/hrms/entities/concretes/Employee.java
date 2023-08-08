@@ -2,11 +2,9 @@ package kodlamaio.hrms.entities.concretes;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import kodlamaio.hrms.entities.abstracts.BaseUser;
-import kodlamaio.hrms.entities.concretes.verifications.EmployeeConfirm;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,6 +28,6 @@ public class Employee extends BaseUser {
 	@Column(name = "last_name", nullable = false)
 	private String lastName;
 	
-	@OneToOne(mappedBy = "employee")
-	private EmployeeConfirm employeeConfirm;
+//	@OneToOne(mappedBy = "employee")
+//	private EmployeeConfirm employeeConfirm;
 }

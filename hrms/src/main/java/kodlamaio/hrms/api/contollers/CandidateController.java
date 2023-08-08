@@ -51,6 +51,8 @@ public class CandidateController {
 	
 	
 	
+	
+	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	ErrorDataResult<Object> handleValidationException(MethodArgumentNotValidException exceptions){

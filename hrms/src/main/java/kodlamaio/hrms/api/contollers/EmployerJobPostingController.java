@@ -40,6 +40,29 @@ public class EmployerJobPostingController {
 		
 		return ResponseEntity.ok(this.employerJobPostingService.getAll());
 	}
+	@GetMapping("/getAllOrderByDate")
+	public ResponseEntity<?> getAllOrderByDate(){
+		
+		return ResponseEntity.ok(this.employerJobPostingService.getAllOrderBy());
+	}
+	
+	@GetMapping("/getAllActive")
+	public ResponseEntity<?> getAllActive(){
+		
+		return ResponseEntity.ok(this.employerJobPostingService.getAllActive());
+	}
+	
+	@GetMapping("/getEmployerJobPostingWithCompany")
+	public ResponseEntity<?> getEmployerJobPostingWithCompany(String companyName){
+		
+		return ResponseEntity.ok(this.employerJobPostingService.getEmployerJobPostingWithCompany(companyName));
+	}
+	
+	@GetMapping("/updateStatus")
+	public ResponseEntity<?> updateStatus(int employerJobPostingId){
+		
+		return ResponseEntity.ok(this.employerJobPostingService.updateStatus(employerJobPostingId));
+	}
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
