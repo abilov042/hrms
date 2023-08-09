@@ -3,7 +3,7 @@ package kodlamaio.hrms.entities.concretes;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import kodlamaio.hrms.entities.abstracts.BaseUser;
@@ -24,7 +24,7 @@ public class Employer extends BaseUser {
 //	@Column(name = "id")
 //	private int userId;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "company_id")
 	private Company company;
 	
