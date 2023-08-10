@@ -11,7 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
 import kodlamaio.hrms.entities.concretes.Candidate;
 import kodlamaio.hrms.entities.concretes.jobPosting.JobPosition;
 import lombok.AllArgsConstructor;
@@ -22,7 +21,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name = "candidate_CVs")
+@Table(name = "candidate_cvs")
 public class CandidateCV {
 	
 	@Id
@@ -68,5 +67,18 @@ public class CandidateCV {
 	@OneToOne
 	@JoinColumn(name = "candidate_id")
 	private Candidate candidate;
+	
+	@ManyToOne
+	@JoinColumn(name = "program_language")
+	private ProgramLanguage programLanguage;
+	
+	@Column(name = "git_hub_address")
+	private String gitHubAddress;
+	
+	@Column(name = "linked_in_address")
+	private String linkedInAddress;
+	
+	@OneToOne
+	private CandidateProfilePhoto candidateProfilePhoto;
 
 }
