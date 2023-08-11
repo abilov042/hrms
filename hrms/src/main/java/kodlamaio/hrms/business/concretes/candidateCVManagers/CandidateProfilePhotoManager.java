@@ -35,7 +35,7 @@ public class CandidateProfilePhotoManager implements CandidateProfilePhotoServic
 		Map uploadResult = cloudinaryConfigration.cloudinary().uploader().upload(photo.getBytes(), ObjectUtils.emptyMap());
 		CandidateProfilePhoto candidateProfilePhoto = new CandidateProfilePhoto();
 		candidateProfilePhoto.setPhotoURL(String.valueOf(uploadResult.get("url")));
-		CandidateCV candidateCV = candidateCVDao.findById(candidateCvId);  // error line
+		CandidateCV candidateCV = candidateCVDao.findById(candidateCvId).orElseThrow();  // error line
 		candidateProfilePhoto.setCandidateCV(candidateCV);
 		this.candidateProfilePhotoDao.save(candidateProfilePhoto);
 		return new SuccessResult("Profil sekli yerlesdirildi"); 

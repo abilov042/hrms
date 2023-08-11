@@ -1,5 +1,7 @@
 package kodlamaio.hrms.entities.concretes.candidateCV;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -32,6 +34,7 @@ public class CandidateCV {
 	@Column(name = "description")
 	private String description;
 	
+	
 	@ManyToOne
 	@JoinColumn(name = "school_name")
 	private University school;
@@ -40,21 +43,24 @@ public class CandidateCV {
 	@JoinColumn(name = "department_id")
 	private Department department;
 	
+	
 	@Column(name = "starting_date")
-	private Date startingDate;
+	private LocalDate startingDate;
 	
 	@Column(name = "ending_date")
-	private Date endingDate;
+	private LocalDate endingDate;
 	
 	@ManyToOne
 	@JoinColumn(name = "job_position_id")
 	private JobPosition jobPosition;
 	
+	
 	@Column(name = "starting_job_practice")
-	private Date stratingJobPractice;
+	private LocalDate stratingJobPractice;
+	
 	
 	@Column(name = "ending_job_practice")
-	private Date endingJobPractice;
+	private LocalDate endingJobPractice;
 	
 	@ManyToOne
 	@JoinColumn(name = "foreign_language_id")
@@ -69,7 +75,7 @@ public class CandidateCV {
 	private Candidate candidate;
 	
 	@ManyToOne
-	@JoinColumn(name = "program_language")
+	@JoinColumn(name = "program_language_id")
 	private ProgramLanguage programLanguage;
 	
 	@Column(name = "git_hub_address")
@@ -78,7 +84,9 @@ public class CandidateCV {
 	@Column(name = "linked_in_address")
 	private String linkedInAddress;
 	
-	@OneToOne
-	private CandidateProfilePhoto candidateProfilePhoto;
+	@Column(name = "activity_year")
+	private int activityYear;
+	
+	
 
 }

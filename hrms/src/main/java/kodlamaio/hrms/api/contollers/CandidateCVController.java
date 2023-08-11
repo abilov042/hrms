@@ -41,6 +41,30 @@ public class CandidateCVController {
 		return ResponseEntity.ok(this.candidateCVService.getAll());
 	}
 	
+	@GetMapping("/getEndDateDesc")
+	public ResponseEntity<?> getEndDateDesc(){
+		
+		return ResponseEntity.ok(this.candidateCVService.getEndDateDesc());
+	}
+	
+	@GetMapping("/getEndDateNull")
+	public ResponseEntity<?> getEndDateNull(){
+		
+		return ResponseEntity.ok(this.candidateCVService.getEndDateNull());
+	}
+	
+	@GetMapping("/getEndingJobPracticeDesc")
+	public ResponseEntity<?> getEndingJobPracticeDesc(){
+		
+		return ResponseEntity.ok(this.candidateCVService.getActivityYearDesc());
+	}
+	
+	@GetMapping("/getEndingJobPracticeNull")
+	public ResponseEntity<?> getEndingJobPracticeNull(){
+		
+		return ResponseEntity.ok(this.candidateCVService.getActivityYearNull());
+	}
+	
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
