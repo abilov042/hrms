@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +25,7 @@ import lombok.AllArgsConstructor;
 
 @RestController
 @RequestMapping("/api/candidateCVs")
+@CrossOrigin
 @AllArgsConstructor
 public class CandidateCVController {
 	
@@ -63,6 +65,12 @@ public class CandidateCVController {
 	public ResponseEntity<?> getEndingJobPracticeNull(){
 		
 		return ResponseEntity.ok(this.candidateCVService.getActivityYearNull());
+	}
+	
+	@GetMapping("/getById")
+	public ResponseEntity<?> getById(int id){
+		
+		return ResponseEntity.ok(this.candidateCVService.getById(id));
 	}
 	
 	

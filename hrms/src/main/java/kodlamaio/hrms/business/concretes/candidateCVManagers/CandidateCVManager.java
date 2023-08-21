@@ -58,4 +58,10 @@ public class CandidateCVManager implements CandidateCVService {
 		return new SuccessDataResult<List<CandidateCV>>("Data geldi",this.candidateCVDao.getActivityYearNull()); 
 	}
 
+	@Override
+	public DataResult<CandidateCV> getById(int id) {
+		
+		return new SuccessDataResult<CandidateCV>("Data geldi" ,this.candidateCVDao.findById(id).orElseThrow());
+	}
+
 }

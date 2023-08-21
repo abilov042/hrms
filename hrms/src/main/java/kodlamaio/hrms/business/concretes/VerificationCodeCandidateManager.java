@@ -10,17 +10,14 @@ import kodlamaio.hrms.business.abstracts.VerificationCodeCandidateService;
 import kodlamaio.hrms.dataAccess.abstracts.VerificationCodeCandidateDao;
 import kodlamaio.hrms.entities.concretes.Candidate;
 import kodlamaio.hrms.entities.concretes.verifications.VerificationCodeCandidate;
+import lombok.AllArgsConstructor;
 
 @Service
+@AllArgsConstructor
 public class VerificationCodeCandidateManager implements VerificationCodeCandidateService {
 	
 	private final VerificationCodeCandidateDao verificationCodeCandidateDao;
 	
-	@Autowired
-	public VerificationCodeCandidateManager(VerificationCodeCandidateDao verificationCodeCandidateDao) {
-		this.verificationCodeCandidateDao = verificationCodeCandidateDao;
-		
-	}
 
 	@Override
 	public void createEmailVerificationCodeCandidate(Candidate candidate) {

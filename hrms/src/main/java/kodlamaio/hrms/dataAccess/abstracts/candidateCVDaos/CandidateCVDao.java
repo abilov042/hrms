@@ -20,4 +20,5 @@ public interface CandidateCVDao extends JpaRepository<CandidateCV, Integer> {
 	
 	@Query("FROM CandidateCV WHERE activityYear = 0")
 	List<CandidateCV> getActivityYearNull();
+	
 }

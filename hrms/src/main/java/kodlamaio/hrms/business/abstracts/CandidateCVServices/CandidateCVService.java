@@ -13,4 +13,5 @@ public interface CandidateCVService {
 	public DataResult<List<CandidateCV>> getEndDateNull();
 	public DataResult<List<CandidateCV>> getActivityYearDesc();
 	public DataResult<List<CandidateCV>> getActivityYearNull();
+	public DataResult<CandidateCV> getById(int id);
 }
