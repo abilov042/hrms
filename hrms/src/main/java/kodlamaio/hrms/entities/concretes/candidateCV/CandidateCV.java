@@ -1,8 +1,6 @@
 package kodlamaio.hrms.entities.concretes.candidateCV;
 
 import java.time.LocalDate;
-import java.time.Period;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

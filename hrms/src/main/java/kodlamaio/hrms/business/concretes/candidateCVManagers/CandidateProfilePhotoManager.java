@@ -47,4 +47,10 @@ public class CandidateProfilePhotoManager implements CandidateProfilePhotoServic
 		return new SuccessDataResult<List<CandidateProfilePhoto>>("Fotolar geldi", this.candidateProfilePhotoDao.findAll());
 	}
 
+	@Override
+	public DataResult<CandidateProfilePhoto> getBycandidateCVId(int id) {
+		
+		return new SuccessDataResult<CandidateProfilePhoto>("Photo geldi" ,this.candidateProfilePhotoDao.getByCandidateCV_Id(id));
+	}
+
 }

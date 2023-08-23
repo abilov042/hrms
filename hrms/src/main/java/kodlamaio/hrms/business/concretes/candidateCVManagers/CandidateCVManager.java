@@ -1,5 +1,6 @@
 package kodlamaio.hrms.business.concretes.candidateCVManagers;
 
+import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
 
@@ -22,10 +23,11 @@ public class CandidateCVManager implements CandidateCVService {
 
 	@Override
 	public Result add(CandidateCV candidateCV) {
-		Period duration = Period.between(candidateCV.getStratingJobPractice(), candidateCV.getEndingJobPractice());
-		candidateCV.setActivityYear((candidateCV.getEndingJobPractice()==null)?0:duration.getYears());
+		Period duration = Period.between(candidateCV.getStratingJobPractice(),(candidateCV.getEndingJobPractice()==null)? LocalDate.now() :candidateCV.getEndingJobPractice());
+		candidateCV.setActivityYear(duration.getYears());
 		this.candidateCVDao.save(candidateCV);
 		return new SuccessResult("save olundu");
+		
 	}
 
 	@Override

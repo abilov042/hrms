@@ -41,11 +41,11 @@ public class CandidateProfilePhotoController {
 		return ResponseEntity.ok(this.candidateProfilePhotoService.getAll());
 	}
 	
-//	@GetMapping("/getByCandidateId")
-//	ResponseEntity<?> getByCandidateId(int id){
-//		
-//		return ResponseEntity.ok(this.candidateProfilePhotoService.getByCandidateId(id));
-//	}
+	@GetMapping("/getByCandidateId")
+	ResponseEntity<?> getByCandidateId(int id){
+		
+		return ResponseEntity.ok(this.candidateProfilePhotoService.getBycandidateCVId(id));
+	}
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)

@@ -13,5 +13,6 @@ public interface CandidateProfilePhotoService {
 	
 	Result add(MultipartFile photo, int candidateCvId) throws IOException;
 	DataResult<List<CandidateProfilePhoto>> getAll();
+	DataResult<CandidateProfilePhoto> getBycandidateCVId(int id);
 
 }

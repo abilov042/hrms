@@ -24,9 +24,7 @@ public class Employer extends BaseUser {
 //	@Column(name = "id")
 //	private int userId;
 	
-	@ManyToOne
-	@JoinColumn(name = "company_id")
-	private Company company;
+	
 	
 	@Column(name = "web_adderss")
 	private String webAddress;
