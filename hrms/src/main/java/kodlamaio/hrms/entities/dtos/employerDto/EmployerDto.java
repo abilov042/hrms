@@ -1,8 +1,5 @@
 package kodlamaio.hrms.entities.dtos.employerDto;
 
-
-
-import kodlamaio.hrms.entities.concretes.Company;
 import kodlamaio.hrms.entities.dtos.UserDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

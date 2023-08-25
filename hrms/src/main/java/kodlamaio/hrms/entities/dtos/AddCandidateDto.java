@@ -3,16 +3,14 @@ package kodlamaio.hrms.entities.dtos;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-public class AddCandidateDto {
+@Getter
+@Setter
+public class AddCandidateDto extends UserDto {
 	
-	private String email;
-	 
-	private String password;
 	
-	private String cPassword;
 	
 	@NotBlank
 	@NotNull
