@@ -43,4 +43,10 @@ public class EmployerManager implements EmployerService {
 		return new SuccessResult("Employer eklendi");
 	}
 
+	@Override
+	public DataResult<Employer> getById(int id) {
+		
+		return new SuccessDataResult<Employer>("Data geldi",this.employerDao.findById(id).orElseThrow());
+	}
+
 }

@@ -17,7 +17,7 @@ public interface EmployerJobPostingDao extends JpaRepository<EmployerJobPosting,
 	@Query("From EmployerJobPosting where status=true")
 	List<EmployerJobPosting> getAllActive();
 	
-	@Query("Select new kodlamaio.hrms.entities.dtos.EmployerJobPostingWithCompanyDto(c.companyName, j.positionName,e.numberOfJobOpenings , e.postingDate, e.deadline) From EmployerJobPosting e Inner Join e.company c  Inner Join e.jobPosition j where status=true and companyName=:companyName")
+	@Query("Select new kodlamaio.hrms.entities.dtos.EmployerJobPostingWithCompanyDto(c.companyName, j.positionName,e.numberOfJobOpenings , e.postingDate, e.deadline) From EmployerJobPosting e Inner Join e.employer c  Inner Join e.jobPosition j where status=true and companyName=:companyName")
 	List<EmployerJobPostingWithCompanyDto> getEmployerJobPostingWithCompany(String companyName);
 	
 	

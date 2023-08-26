@@ -6,7 +6,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import kodlamaio.hrms.entities.abstracts.VerificationCode;
-import kodlamaio.hrms.entities.concretes.Company;
+import kodlamaio.hrms.entities.concretes.Employer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,7 +22,7 @@ public class VerificationCodeCompany extends VerificationCode {
 	
 	@OneToOne
 	@JoinColumn(name = "company_id")
-	private Company company;
+	private Employer employer;
 	
 	
 }

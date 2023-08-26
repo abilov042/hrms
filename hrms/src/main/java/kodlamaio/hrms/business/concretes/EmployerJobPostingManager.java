@@ -10,12 +10,8 @@ import kodlamaio.hrms.core.untilitues.result.DataResult;
 import kodlamaio.hrms.core.untilitues.result.Result;
 import kodlamaio.hrms.core.untilitues.result.SuccessDataResult;
 import kodlamaio.hrms.core.untilitues.result.SuccessResult;
-import kodlamaio.hrms.dataAccess.abstracts.CityDao;
 import kodlamaio.hrms.dataAccess.abstracts.EmployerJobPostingDao;
-import kodlamaio.hrms.dataAccess.abstracts.JobPositionDao;
-import kodlamaio.hrms.entities.concretes.jobPosting.City;
 import kodlamaio.hrms.entities.concretes.jobPosting.EmployerJobPosting;
-import kodlamaio.hrms.entities.concretes.jobPosting.JobPosition;
 import kodlamaio.hrms.entities.dtos.EmployerJobPostingDto;
 import kodlamaio.hrms.entities.dtos.EmployerJobPostingWithCompanyDto;
 import lombok.AllArgsConstructor;
@@ -25,8 +21,6 @@ import lombok.AllArgsConstructor;
 public class EmployerJobPostingManager  implements EmployerJobPostingService{
 	
 	private EmployerJobPostingDao employerJobPostingDao;
-	private JobPositionDao jobPositionDao;
-	private CityDao cityDao;
 	private MapperService mapperService;
 
 	@Override
@@ -37,12 +31,9 @@ public class EmployerJobPostingManager  implements EmployerJobPostingService{
 
 	@Override
 	public Result add(EmployerJobPosting employerJobPosting) {
-		City city = cityDao.findById(employerJobPosting.getCity().getId());
-		JobPosition jobPosition = jobPositionDao.findById(employerJobPosting.getJobPosition().getId());
-		employerJobPosting.setCity(city);
-		employerJobPosting.setJobPosition(jobPosition);
+		
 		employerJobPosting.setPostingDate(new Date());
-		this.employerJobPostingDao.save(employerJobPosting);
+		this.employerJobPostingDao.save(employerJobPosting); 
 		return new SuccessResult("Is elani yaradildi");
 	}
 

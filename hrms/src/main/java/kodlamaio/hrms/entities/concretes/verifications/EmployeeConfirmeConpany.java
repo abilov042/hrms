@@ -6,8 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import kodlamaio.hrms.entities.concretes.Company;
+import kodlamaio.hrms.entities.concretes.Employer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,6 +30,6 @@ public class EmployeeConfirmeConpany {
 	
 	@OneToOne
 	@JoinColumn(name = "company_id")
-	private Company company;
+	private Employer employer;
 
 }

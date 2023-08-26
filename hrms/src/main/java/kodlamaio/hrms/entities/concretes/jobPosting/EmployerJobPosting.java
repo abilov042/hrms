@@ -9,8 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import kodlamaio.hrms.entities.concretes.Company;
+import kodlamaio.hrms.entities.concretes.Employer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -55,8 +54,8 @@ public class EmployerJobPosting {
 	private JobPosition jobPosition;
 	
 	@ManyToOne
-	@JoinColumn(name = "company_id")
-	private Company company;
+	@JoinColumn(name = "employer_id")
+	private Employer employer;
 	
 	@ManyToOne
 	@JoinColumn(name = "city_id")

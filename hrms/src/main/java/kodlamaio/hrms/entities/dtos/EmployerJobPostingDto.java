@@ -1,7 +1,7 @@
 package kodlamaio.hrms.entities.dtos;
 
 import java.util.Date;
-import kodlamaio.hrms.entities.concretes.Company;
+import kodlamaio.hrms.entities.concretes.Employer;
 import kodlamaio.hrms.entities.concretes.jobPosting.JobPosition;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,7 +21,7 @@ public class EmployerJobPostingDto {
 	
 	private JobPosition jobPosition;
 	
-	private Company company;
+	private Employer employer;
 	
 	
 	

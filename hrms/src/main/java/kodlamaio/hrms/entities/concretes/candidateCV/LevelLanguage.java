@@ -24,6 +24,6 @@ public class LevelLanguage {
 	private int id;
 	
 	@Column(name = "level")
-	private int level;
+	private String level;
 
 }

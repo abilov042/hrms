@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name = "universitys")
+@Table(name = "universities")
 public class University {
 	
 	@Id
@@ -23,8 +23,8 @@ public class University {
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "school_name")
-	private String universityName;
+	@Column(name = "university_name")
+	private String universityName; 
 	
 	
 }

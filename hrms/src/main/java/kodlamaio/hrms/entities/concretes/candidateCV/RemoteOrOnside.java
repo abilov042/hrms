@@ -1,4 +1,4 @@
-package kodlamaio.hrms.entities.concretes;
+package kodlamaio.hrms.entities.concretes.candidateCV;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,21 +17,15 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "companies")
-public class Company {
+@Table(name = "remote_or_onside")
+public class RemoteOrOnside {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "company_name")
-	private String companyName;
-	
-	@Column(name = "web_site")
-	private String webSite;
-	
-	@Column(name = "phone_number")
-	private String phoneNumber;
+	@Column(name = "remove_or_onside")
+	private String remoteOrOnside;
 
 }

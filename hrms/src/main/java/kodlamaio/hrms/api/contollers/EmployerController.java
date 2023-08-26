@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kodlamaio.hrms.business.abstracts.EmployerService;
 import kodlamaio.hrms.core.untilitues.result.DataResult;
 import kodlamaio.hrms.core.untilitues.result.Result;
+import kodlamaio.hrms.core.untilitues.result.SuccessDataResult;
 import kodlamaio.hrms.entities.concretes.Employer;
 import kodlamaio.hrms.entities.dtos.employerDto.EmployerDto;
 import lombok.AllArgsConstructor;
@@ -34,5 +35,11 @@ public class EmployerController {
 	public DataResult<List<Employer>> getAll(){
 		
 		return this.employerService.getAll();
+	}
+	
+	@GetMapping("/getById")
+	public DataResult<Employer> getById(int id) {
+		
+		return this.employerService.getById(id);
 	}
 }

@@ -85,6 +85,10 @@ public class CandidateCV {
 	@Column(name = "activity_year")
 	private int activityYear;
 	
+	@ManyToOne
+	@JoinColumn(name = "remove_or_onside_id")
+	private RemoteOrOnside remoteOrOnside;
+	
 	
 
 }
